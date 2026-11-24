@@ -11,3 +11,5 @@ A deterministic replay of a coding-agent approval display. It never executes com
 ```
 
 From the repository root: `python projects/01-claude-hud-gate/demo_claude_session.py` after installing the package as described in the root README.
+
+The optional local wrapper runs a command only after explicit terminal confirmation: `python projects/01-claude-hud-gate/cli_wrapper.py -- echo hello`. This is not an agent permission hook or a security sandbox.

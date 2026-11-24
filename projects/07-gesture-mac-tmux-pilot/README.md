@@ -17,3 +17,5 @@ Example frame from the replay:
 | TAP: Next | HOLD: Confirm        |
 +----------------------------------+
 ```
+
+`pane_watcher.py` reads local tmux panes. `gesture_macro_router.py` accepts only allowlisted commands and requires explicit caller confirmation. It sends text and Enter to the selected pane, so inspect any existing input first.

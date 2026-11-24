@@ -17,3 +17,5 @@ Example frame from the replay:
 |                                  |
 +----------------------------------+
 ```
+
+`stall_detector.py` evaluates supplied heartbeat timestamps and pass counts.

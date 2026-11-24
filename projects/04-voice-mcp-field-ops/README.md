@@ -17,3 +17,5 @@ Example frame from the replay:
 | PODS: 41/42 (1 CrashLoop)        |
 +----------------------------------+
 ```
+
+`mcp_providers/docker_health.py` can list local Docker containers using the Docker CLI. The pinout lookup is reference material requiring device-specific verification.

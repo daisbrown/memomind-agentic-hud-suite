@@ -17,3 +17,5 @@ Example frame from the replay:
 |                                  |
 +----------------------------------+
 ```
+
+`obd_watchdog.py` checks caller-supplied values against illustrative thresholds. Missing readings are not treated as proof of vehicle health.

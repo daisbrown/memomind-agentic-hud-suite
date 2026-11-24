@@ -2,11 +2,11 @@
 
 A simulation-first exploration of compact heads-up displays for agent workflows. The suite provides a shared 3-line, 32-character frame budget, priority and expiry handling, a terminal renderer, a coalescing transport wrapper, and seven deterministic project replays. Each project README describes what is simulated and what remains to be integrated.
 
-**Status:** early prototype. The 3 × 32 layout, gesture semantics and display capabilities are design assumptions, not verified MemoMind specifications. No glasses, BLE protocol, SDK integration, microphone, real approvals, or claimed latency have been tested. The BLE transport intentionally fails until official integration details are available. This repository does not establish eligibility for any hardware or discount.
+**Status:** early prototype. The 3 × 32 layout, gesture semantics and display capabilities are design assumptions, not verified MemoMind specifications. No glasses, BLE protocol, MemoMind SDK integration, microphone, gesture approval, or claimed latency have been tested. The local CLI gate supports explicit terminal confirmation only. The BLE transport intentionally fails until official integration details are available. This repository does not establish eligibility for any hardware or discount.
 
 ```text
-Agent replay → formatter → priority / batching → simulator
-                                             ↘ SDK adapter (future)
+Local sources → formatter → priority / batching → simulator
+                                           ↘ MemoMind plugin bridge (future)
 ```
 
 ## Run
@@ -20,6 +20,24 @@ pytest
 ```
 
 The batcher requires its caller to invoke `flush()` after the batching window; it is not an autonomous scheduler. Frames are measured in Python code points, which does not guarantee physical glyph width. The formatter avoids partial tokens but may omit critical content; callers must supply concise, prioritized lines.
+
+## MemoMind platform direction
+
+The [official platform overview](https://open-platform.memo-mind.com/docs/get-started/overview/?lang=en) describes GlassSDK plugins in C and PhoneSDK web plugins. A future adapter needs to follow that platform and its supported bridge; the BLE stub is exploratory and does not implement the official SDK. The three-line display is a simulator convention, not an established hardware limit. Device and App validation require compatible hardware and software.
+
+## Project capabilities
+
+| Project | Working local components | Remaining integration |
+| --- | --- | --- |
+| Claude gate | Replay, risk heuristic, explicit terminal confirmation wrapper | MCP and device approval |
+| Moto | Replay, GPX waypoint parser, threshold checker | Live GPS, OBD, voice and safety validation |
+| MoA sentinel | Replay, synchronous observer, heartbeat detector | Async instrumentation and telemetry bridge |
+| Field ops | Checklist, local Docker listing, reference pinouts | Voice and MCP interfaces |
+| Delta pulse | Replay, cooldown filter, YAML rules | Live market feed |
+| Local cue | ADR trigger and local lexical index | Speech and vector retrieval |
+| Tmux pilot | Replay, pane listing and confirmed allowlisted macros | Device gestures and real-session validation |
+
+The terminal gate is not a security sandbox or a Claude Code permission hook. The tmux macro router sends text and Enter to an existing pane only after caller confirmation; existing pane contents can change what executes. Review the pane before use.
 
 ## Roadmap
 

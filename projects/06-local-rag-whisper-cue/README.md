@@ -17,3 +17,5 @@ Example frame from the replay:
 |                                  |
 +----------------------------------+
 ```
+
+`local_index.py` provides a small local lexical index of Markdown files; it is not vector retrieval.

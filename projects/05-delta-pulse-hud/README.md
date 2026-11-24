@@ -17,3 +17,5 @@ Example frame from the replay:
 | ASK: $2.45 | IVR: 42%            |
 +----------------------------------+
 ```
+
+`confluence_engine.py` loads optional YAML rules. Install with `python -m pip install -e ".[rules]"`.
