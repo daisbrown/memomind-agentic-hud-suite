@@ -1,6 +1,6 @@
 # MemoMind Agentic HUD Suite
 
-A simulation-first exploration of compact heads-up displays for agent workflows. The first milestone provides a shared 3-line, 32-character frame budget, priority and expiry handling, a terminal renderer, a coalescing transport wrapper, and a coding-gate replay.
+A simulation-first exploration of compact heads-up displays for agent workflows. The suite provides a shared 3-line, 32-character frame budget, priority and expiry handling, a terminal renderer, a coalescing transport wrapper, and seven deterministic project replays. Each project README describes what is simulated and what remains to be integrated.
 
 **Status:** early prototype. The 3 × 32 layout, gesture semantics and display capabilities are design assumptions, not verified MemoMind specifications. No glasses, BLE protocol, SDK integration, microphone, real approvals, or claimed latency have been tested. The BLE transport intentionally fails until official integration details are available. This repository does not establish eligibility for any hardware or discount.
 
@@ -24,7 +24,7 @@ The batcher requires its caller to invoke `flush()` after the batching window; i
 ## Roadmap
 
 - Implement and validate a genuine approval integration with explicit authorization and fail-closed behavior.
-- Develop the six additional projects in the included blueprint, beginning with simulation and safety boundaries.
+- Expand the six additional project replays into the integrations described in the blueprint, with tests and safety boundaries.
 - Verify display capabilities and SDK transport against official documentation and hardware before claiming compatibility.
 
 The original design brief is included for context; it describes aspirations, not completed functionality.

@@ -15,5 +15,6 @@ dev = ["pytest>=8"]
 where = ["packages/memomind-hud-core/src"]
 
 [tool.pytest.ini_options]
-testpaths = ["packages/memomind-hud-core/tests", "projects/01-claude-hud-gate/tests"]
-pythonpath = ["packages/memomind-hud-core/src", "projects/01-claude-hud-gate"]
+testpaths = ["packages/memomind-hud-core/tests", "projects"]
+addopts = "--import-mode=importlib"
+pythonpath = ["packages/memomind-hud-core/src", "projects/01-claude-hud-gate", "projects/02-moto-hud-copilot", "projects/03-moa-sentinel-hud", "projects/04-voice-mcp-field-ops", "projects/05-delta-pulse-hud", "projects/06-local-rag-whisper-cue", "projects/07-gesture-mac-tmux-pilot"]
