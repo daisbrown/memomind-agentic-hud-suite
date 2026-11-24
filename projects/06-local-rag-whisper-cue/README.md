@@ -19,3 +19,5 @@ Example frame from the replay:
 ```
 
 `local_index.py` provides a small local lexical index of Markdown files; it is not vector retrieval.
+
+Run `python projects/06-local-rag-whisper-cue/cli.py <directory> <query>` to search Markdown locally.

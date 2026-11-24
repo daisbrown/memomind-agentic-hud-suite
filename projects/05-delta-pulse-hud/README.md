@@ -19,3 +19,5 @@ Example frame from the replay:
 ```
 
 `confluence_engine.py` loads optional YAML rules. Install with `python -m pip install -e ".[rules]"`.
+
+`csv_feed.py` parses caller-supplied CSV ticks into the same filtering engine.

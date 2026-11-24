@@ -19,3 +19,5 @@ Example frame from the replay:
 ```
 
 `stall_detector.py` evaluates supplied heartbeat timestamps and pass counts.
+
+`telemetry_bridge.py` provides a local FastAPI heartbeat endpoint. Run only on trusted loopback: it has no authentication or persistence.

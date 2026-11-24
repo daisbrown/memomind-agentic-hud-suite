@@ -29,15 +29,21 @@ The [official platform overview](https://open-platform.memo-mind.com/docs/get-st
 
 | Project | Working local components | Remaining integration |
 | --- | --- | --- |
-| Claude gate | Replay, risk heuristic, explicit terminal confirmation wrapper | MCP and device approval |
-| Moto | Replay, GPX waypoint parser, threshold checker | Live GPS, OBD, voice and safety validation |
-| MoA sentinel | Replay, synchronous observer, heartbeat detector | Async instrumentation and telemetry bridge |
-| Field ops | Checklist, local Docker listing, reference pinouts | Voice and MCP interfaces |
-| Delta pulse | Replay, cooldown filter, YAML rules | Live market feed |
-| Local cue | ADR trigger and local lexical index | Speech and vector retrieval |
-| Tmux pilot | Replay, pane listing and confirmed allowlisted macros | Device gestures and real-session validation |
+| Claude gate | Replay, risk heuristic, terminal confirmation, MCP risk tool | Device approval |
+| Moto | Replay, GPX parser, distance calculation, OBD adapter, threshold checker | Real GPS and OBD validation, voice and rider safety validation |
+| MoA sentinel | Replay, synchronous observer, heartbeat detector and local HTTP bridge | Async instrumentation and deployment security |
+| Field ops | Checklist, local Docker listing, reference pinouts and stdio MCP tools | Voice integration |
+| Delta pulse | Replay, CSV feed, cooldown filter, YAML rules | Live market feed |
+| Local cue | ADR trigger, local lexical index and CLI | Speech and vector retrieval |
+| Tmux pilot | Replay, pane listing, interactive confirmed allowlisted macros | Device gestures and real-session validation |
 
 The terminal gate is not a security sandbox or a Claude Code permission hook. The tmux macro router sends text and Enter to an existing pane only after caller confirmation; existing pane contents can change what executes. Review the pane before use.
+
+## Optional local integrations
+
+Install `python -m pip install -e '.[integrations]'`. Start the gate MCP server with `python projects/01-claude-hud-gate/mcp_server.py` and field ops with `python projects/04-voice-mcp-field-ops/mcp_server.py` as stdio MCP server commands. The gate returns `approved: false` and `unavailable`; it does not provide real approvals.
+
+For the local telemetry bridge, from `projects/03-moa-sentinel-hud`, run `python -m uvicorn telemetry_bridge:app --host 127.0.0.1`. It has no authentication or persistence and must remain on a trusted loopback interface. `projects/06-local-rag-whisper-cue/cli.py` searches local Markdown. The optional OBD adapter requires `.[obd]` and a compatible device.
 
 ## Roadmap
 

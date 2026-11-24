@@ -19,3 +19,5 @@ Example frame from the replay:
 ```
 
 `obd_watchdog.py` checks caller-supplied values against illustrative thresholds. Missing readings are not treated as proof of vehicle health.
+
+`obd_adapter.py` can read supported standard PIDs through python-OBD. TPMS is not a standard PID and is not implemented. `nav_distance.py` computes straight-line distance, not driving directions.
